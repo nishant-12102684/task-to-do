@@ -1,0 +1,44 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Board</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="board">
+        <div class="column">
+            <h2>To Do <span id="todo-count">(0)</span></h2>
+            <div id="todo" class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <button onclick="addTask('todo')">New</button>
+        </div>
+        <div class="column">
+            <h2>In Progress <span id="inprogress-count">(0)</span></h2>
+            <div id="inprogress" class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <button onclick="addTask('inprogress')">New</button>
+        </div>
+        <div class="column">
+            <h2>Done <span id="done-count">(0)</span></h2>
+            <div id="done" class="tasks" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+            <button onclick="addTask('done')">New</button>
+        </div>
+    </div>
+    <div id="task-details" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Task Details</h2>
+            <input type="text" id="task-title" placeholder="Task Title"><br>
+            <select id="task-status">
+                <option value="todo">To Do</option>
+                <option value="inprogress">In Progress</option>
+                <option value="done">Done</option>
+            </select><br>
+            <textarea id="task-description" placeholder="Task Description"></textarea><br>
+            <button id="save-task">Save</button>
+            <button id="delete-task">Delete</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
